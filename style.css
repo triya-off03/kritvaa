@@ -1,0 +1,1937 @@
+/* =========================================================
+   KRITVAA
+   COMPLETE WEBSITE CSS
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cream: #fff4d7;
+    --cream-light: #fff9eb;
+    --gold: #d6a34c;
+    --gold-light: #f5d58d;
+
+    --green: #123d34;
+    --green-dark: #071d18;
+    --green-mid: #1b5a4b;
+
+    --ink: #18251f;
+    --white: #ffffff;
+
+    --shadow: rgba(0, 0, 0, 0.35);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: var(--green-dark);
+    color: var(--cream);
+    font-family: "DM Sans", sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 28px 4vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    pointer-events: none;
+}
+
+.logo,
+.navigation {
+    pointer-events: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: white;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.7);
+}
+
+.logo-star {
+    color: var(--gold-light);
+    font-size: 25px;
+}
+
+.logo-text strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+    line-height: 0.8;
+
+    letter-spacing: 0.02em;
+}
+
+.logo-text small {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+    min-width: 500px;
+
+    padding: 15px 25px;
+
+    display: flex;
+    justify-content: center;
+
+    border: 1px solid rgba(244, 213, 138, 0.7);
+    border-radius: 999px;
+
+    background: rgba(12, 22, 20, 0.78);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.navigation a {
+    min-width: 135px;
+
+    padding: 0 25px;
+
+    text-align: center;
+
+    color: white;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    border-right: 1px solid rgba(255, 240, 190, 0.5);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.navigation a:last-child {
+    border-right: none;
+}
+
+.navigation a:hover {
+    color: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* LEFT IMAGE */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    z-index: -3;
+
+    inset: 0 auto 0 0;
+
+    width: 50%;
+
+    background-image: url("assets/left.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* RIGHT IMAGE */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    z-index: -3;
+
+    inset: 0 0 0 auto;
+
+    width: 50%;
+
+    background-image: url("assets/right.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* DARK OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+    z-index: -1;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.18),
+            rgba(0, 0, 0, 0.04) 35%,
+            rgba(0, 0, 0, 0.04) 65%,
+            rgba(0, 0, 0, 0.20)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CENTER KRITVAA CARD
+========================================================= */
+
+.hero-card {
+    position: relative;
+    z-index: 10;
+
+    width: min(570px, 90vw);
+
+    margin-top: 45px;
+
+    padding: 45px 48px 42px;
+
+    text-align: center;
+
+    border: 2px solid rgba(255, 231, 167, 0.8);
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 247, 215, 0.91),
+            rgba(244, 230, 184, 0.82)
+        );
+
+    color: var(--green-dark);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        inset 0 0 35px rgba(255, 255, 255, 0.3);
+
+    backdrop-filter: blur(8px);
+
+    animation: cardFloat 5s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.hero-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 10px;
+
+    border: 1px solid rgba(120, 78, 25, 0.3);
+    border-radius: 20px;
+
+    pointer-events: none;
+}
+
+
+/* CARD TEXT */
+
+.hero-small-title {
+    position: relative;
+    z-index: 2;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    color: #567067;
+}
+
+.bharat {
+    margin-top: 13px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: #7d4f2d;
+}
+
+.hero-card h1 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 2px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(58px, 7vw, 92px);
+
+    line-height: 0.85;
+
+    letter-spacing: 0.04em;
+
+    color: #183c32;
+
+    text-shadow:
+        1px 1px 0 #fff8df;
+}
+
+.hero-tagline {
+    margin-top: 15px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.24em;
+
+    color: #8d5c2c;
+}
+
+.hero-tagline span {
+    color: #bd8c37;
+    margin: 0 5px;
+}
+
+.hero-description {
+    max-width: 420px;
+
+    margin: 18px auto 22px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 600;
+
+    color: #30483f;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.search-box {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+
+    display: flex;
+
+    padding: 5px;
+
+    border: 1px solid rgba(94, 69, 39, 0.35);
+    border-radius: 12px;
+
+    background: rgba(255, 251, 232, 0.8);
+
+    box-shadow:
+        0 8px 20px rgba(76, 53, 25, 0.12);
+}
+
+.search-box input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 15px 16px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #203a31;
+
+    font-size: 15px;
+}
+
+.search-box input::placeholder {
+    color: #718078;
+}
+
+.search-box button {
+    padding: 0 25px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #193f35;
+
+    color: white;
+
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.search-box button:hover {
+    background: #2c6655;
+    transform: translateY(-1px);
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 18px;
+
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    padding: 11px 18px;
+
+    border: 1px solid rgba(70, 65, 42, 0.35);
+    border-radius: 999px;
+
+    background: rgba(255, 250, 228, 0.55);
+
+    color: #234238;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 240, 0.85);
+}
+
+.main-button {
+    background: #193f35;
+    color: white;
+    border-color: #193f35;
+}
+
+
+/* =========================================================
+   KAYA FLOATING BUTTON
+========================================================= */
+
+.kaya-floating {
+    position: fixed;
+    z-index: 200;
+
+    right: 28px;
+    bottom: 28px;
+
+    min-width: 220px;
+
+    padding: 12px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid rgba(245, 213, 141, 0.8);
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 83, 67, 0.96),
+            rgba(9, 42, 35, 0.96)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(214, 166, 77, 0.25);
+
+    animation: kayaFloat 3.2s ease-in-out infinite;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.kaya-floating:hover {
+    transform: translateY(-5px) scale(1.02);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(214, 166, 77, 0.4);
+}
+
+@keyframes kayaFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.kaya-star {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--gold-light);
+    border-radius: 50%;
+
+    color: var(--gold-light);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    font-size: 18px;
+}
+
+.kaya-text {
+    text-align: left;
+}
+
+.kaya-text strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+    line-height: 1;
+}
+
+.kaya-text small {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 8px;
+    letter-spacing: 0.05em;
+}
+
+.kaya-text em {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 4px;
+
+    font-size: 8px;
+    font-style: normal;
+    color: #e9d9aa;
+}
+
+.kaya-text em i {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #76d09e;
+
+    box-shadow: 0 0 7px #76d09e;
+}
+
+
+/* =========================================================
+   CULTURAL PASSPORT SECTION
+========================================================= */
+
+.passport-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 100px 5vw 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(300px, 1.05fr)
+        minmax(260px, 0.75fr)
+        minmax(430px, 1.35fr);
+
+    align-items: center;
+
+    gap: 35px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 45%,
+            rgba(56, 157, 130, 0.55),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(215, 168, 76, 0.18),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #0a2a23,
+            #0e4b3d 50%,
+            #071f1a
+        );
+}
+
+
+/* GLOW */
+
+.passport-glow {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+.glow-left {
+    left: -170px;
+    top: 25%;
+
+    background: rgba(34, 173, 143, 0.2);
+}
+
+.glow-right {
+    right: -160px;
+    bottom: -100px;
+
+    background: rgba(217, 170, 73, 0.15);
+}
+
+
+/* DECORATIVE LABELS */
+
+.passport-decoration {
+    position: absolute;
+
+    z-index: 1;
+
+    padding: 13px 16px;
+
+    border: 1px solid rgba(238, 217, 162, 0.3);
+
+    color: rgba(255, 239, 197, 0.55);
+
+    font-size: 9px;
+    line-height: 1.4;
+
+    letter-spacing: 0.15em;
+
+    pointer-events: none;
+}
+
+.decoration-left {
+    left: 25px;
+    top: 35%;
+
+    transform: rotate(-4deg);
+}
+
+.decoration-bottom {
+    left: 100px;
+    bottom: 35px;
+
+    transform: rotate(2deg);
+}
+
+
+/* =========================================================
+   FLOATING MAP
+========================================================= */
+
+.map-area {
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-light {
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(108, 214, 180, 0.3),
+            transparent 68%
+        );
+
+    filter: blur(15px);
+}
+
+.india-map {
+    position: relative;
+    z-index: 5;
+
+    width: min(510px, 90%);
+
+    max-height: 640px;
+
+    object-fit: contain;
+
+    /* Important: no white box */
+    background: transparent;
+
+    filter:
+        drop-shadow(0 25px 20px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 15px rgba(244, 211, 132, 0.45));
+
+    animation: mapFloat 5s ease-in-out infinite;
+}
+
+@keyframes mapFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-13px) rotate(0.5deg);
+    }
+}
+
+
+/* MAP BORDER GLOW */
+
+.map-area::before {
+    content: "";
+
+    position: absolute;
+
+    width: 65%;
+    height: 70%;
+
+    border: 1px solid rgba(245, 211, 133, 0.22);
+
+    border-radius: 50%;
+
+    transform: rotate(-8deg);
+
+    filter: blur(1px);
+
+    pointer-events: none;
+}
+
+.map-caption {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 12%;
+    bottom: 16%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 12px 16px;
+
+    border: 1px solid rgba(242, 214, 151, 0.4);
+
+    background: rgba(5, 30, 25, 0.65);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    transform: rotate(-3deg);
+}
+
+.map-caption span {
+    color: var(--gold-light);
+    font-size: 14px;
+}
+
+.map-caption strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+}
+
+.map-caption small {
+    margin-top: 2px;
+
+    font-size: 8px;
+    letter-spacing: 0.15em;
+
+    color: #e4d4a9;
+}
+
+.map-star {
+    position: absolute;
+    z-index: 12;
+
+    color: var(--gold-light);
+
+    animation: starPulse 2.5s ease-in-out infinite;
+}
+
+.star-one {
+    top: 22%;
+    right: 17%;
+}
+
+.star-two {
+    top: 36%;
+    left: 14%;
+
+    animation-delay: 0.6s;
+}
+
+.star-three {
+    bottom: 22%;
+    right: 20%;
+
+    animation-delay: 1s;
+}
+
+@keyframes starPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   PASSPORT INTRO
+========================================================= */
+
+.passport-intro {
+    position: relative;
+    z-index: 5;
+
+    padding: 20px;
+}
+
+.passport-label {
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.25em;
+
+    color: var(--gold-light);
+}
+
+.passport-intro h2 {
+    margin-top: 12px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 5vw, 75px);
+
+    line-height: 0.82;
+
+    color: var(--cream);
+}
+
+.passport-intro h2 span {
+    color: var(--gold-light);
+}
+
+.passport-line {
+    margin: 23px 0;
+
+    color: var(--gold-light);
+
+    font-size: 20px;
+}
+
+.passport-intro > p {
+    max-width: 300px;
+
+    color: rgba(255, 245, 216, 0.85);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+    line-height: 1.35;
+}
+
+.passport-stats {
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 30px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(247, 218, 150, 0.35);
+}
+
+.passport-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.passport-stats strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 27px;
+
+    color: var(--gold-light);
+}
+
+.passport-stats span {
+    margin-top: 3px;
+
+    font-size: 9px;
+    letter-spacing: 0.1em;
+
+    color: rgba(255, 245, 220, 0.65);
+}
+
+.view-all-button {
+    margin-top: 30px;
+
+    padding: 13px 20px;
+
+    border: 1px solid rgba(245, 214, 145, 0.75);
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--cream);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+
+    transition: all 0.25s ease;
+}
+
+.view-all-button span {
+    margin-left: 12px;
+
+    color: var(--gold-light);
+}
+
+.view-all-button:hover {
+    background: var(--gold-light);
+    color: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   STATE BROWSER
+========================================================= */
+
+.state-browser {
+    position: relative;
+    z-index: 5;
+
+    padding: 26px 25px 22px;
+
+    border: 1px solid rgba(247, 218, 153, 0.38);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(4, 19, 16, 0.78),
+            rgba(7, 31, 25, 0.58)
+        );
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.browser-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: baseline;
+
+    color: rgba(255, 243, 211, 0.7);
+
+    font-size: 12px;
+}
+
+.browser-heading div {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+}
+
+.browser-heading strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+
+    line-height: 0.8;
+
+    color: var(--gold-light);
+}
+
+.browser-heading span {
+    font-size: 11px;
+}
+
+.browser-line {
+    height: 2px;
+
+    width: 100%;
+
+    margin: 20px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold-light) 0 35%,
+            rgba(255,255,255,0.08) 35%
+        );
+}
+
+
+/* =========================================================
+   8 STATE BOXES
+========================================================= */
+
+.state-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.state-card {
+    position: relative;
+
+    min-height: 102px;
+
+    padding: 15px 17px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--state-color) 85%, #111 15%),
+            color-mix(in srgb, var(--state-color) 45%, #071a15 55%)
+        );
+
+    color: white;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 15px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.state-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    right: -25px;
+    bottom: -35px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.state-card:hover {
+    transform: translateY(-5px) scale(1.015);
+
+    border-color: rgba(255, 231, 160, 0.8);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(241, 205, 124, 0.15);
+}
+
+.state-card-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.state-number {
+    font-size: 10px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    letter-spacing: 0.1em;
+}
+
+.state-emoji {
+    font-size: 24px;
+
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+}
+
+.state-card h3 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 8px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    line-height: 0.95;
+}
+
+.state-card p {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 6px;
+
+    font-size: 9px;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   BROWSER CONTROLS
+========================================================= */
+
+.surprise-button {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    border: none;
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8d59c,
+            #f2a86e
+        );
+
+    color: #6a3822;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.25s ease;
+}
+
+.surprise-button:hover {
+    transform: translateY(-3px);
+}
+
+.surprise-button span:first-child {
+    font-size: 20px;
+}
+
+.browser-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 14px;
+}
+
+.browser-controls button {
+    width: 27px;
+    height: 27px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(255, 236, 183, 0.55);
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: white;
+}
+
+.browser-controls button:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.progress-bar {
+    flex: 1;
+
+    height: 3px;
+
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.progress-bar span {
+    display: block;
+
+    width: 25%;
+    height: 100%;
+
+    background: var(--gold-light);
+
+    transition: width 0.3s ease;
+}
+
+.browser-note {
+    margin-top: 15px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 14px;
+
+    color: rgba(255, 245, 220, 0.65);
+
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    min-height: 180px;
+
+    padding: 45px 6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: #071d18;
+
+    border-top: 1px solid rgba(214, 166, 77, 0.25);
+
+    color: rgba(255, 244, 215, 0.7);
+}
+
+.footer-logo strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    color: var(--cream);
+}
+
+.footer-logo strong span {
+    color: var(--gold-light);
+}
+
+.footer-logo small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 8px;
+    letter-spacing: 0.15em;
+}
+
+.footer p {
+    font-size: 11px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(242, 213, 143, 0.3);
+    border-radius: 50%;
+
+    color: var(--gold-light);
+
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+dialog {
+    border: none;
+    padding: 0;
+}
+
+dialog::backdrop {
+    background: rgba(2, 10, 8, 0.75);
+
+    backdrop-filter: blur(8px);
+}
+
+.state-modal,
+.all-states-modal {
+    position: fixed;
+
+    width: min(620px, 90vw);
+
+    max-height: 85vh;
+
+    margin: auto;
+
+    border: 1px solid rgba(243, 210, 137, 0.65);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #123d34,
+            #071e19
+        );
+
+    color: var(--cream);
+
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.55);
+}
+
+.modal-inner,
+.all-states-inner {
+    padding: 45px;
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 16px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid rgba(255, 231, 171, 0.35);
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 24px;
+}
+
+.modal-label {
+    color: var(--gold-light);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+.modal-inner h2,
+.all-states-inner h2 {
+    margin-top: 15px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 58px;
+
+    line-height: 0.9;
+}
+
+.modal-star {
+    margin: 18px 0;
+
+    color: var(--gold-light);
+
+    font-size: 22px;
+}
+
+#modalStateText {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+    line-height: 1.4;
+
+    color: rgba(255, 244, 215, 0.85);
+}
+
+.modal-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+.modal-tags span {
+    padding: 7px 12px;
+
+    border: 1px solid rgba(244, 211, 139, 0.35);
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    color: var(--gold-light);
+}
+
+
+/* ALL STATES */
+
+.all-states-modal {
+    width: min(900px, 94vw);
+}
+
+.all-states-inner {
+    overflow-y: auto;
+
+    max-height: 80vh;
+}
+
+.all-states-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.all-state {
+    padding: 15px;
+
+    text-align: left;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+
+    background: var(--state-color);
+
+    color: white;
+
+    transition: transform 0.2s ease;
+}
+
+.all-state:hover {
+    transform: translateY(-3px);
+}
+
+.all-state small {
+    display: block;
+
+    opacity: 0.65;
+
+    font-size: 9px;
+}
+
+.all-state strong {
+    display: block;
+
+    margin-top: 6px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   KAYA PANEL
+========================================================= */
+
+.kaya-panel {
+    position: fixed;
+    z-index: 300;
+
+    right: 28px;
+    bottom: 105px;
+
+    width: min(360px, calc(100vw - 35px));
+
+    padding: 18px;
+
+    border: 1px solid rgba(241, 211, 143, 0.55);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 59, 49, 0.98),
+            rgba(5, 26, 21, 0.98)
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(20px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(20px)
+        scale(0.96);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+.kaya-panel.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.kaya-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kaya-panel-header strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 26px;
+}
+
+.kaya-panel-header span {
+    margin-left: 7px;
+
+    font-size: 9px;
+
+    color: #9ce2b9;
+}
+
+.kaya-panel-header i {
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 4px;
+
+    border-radius: 50%;
+
+    background: #7ed59c;
+}
+
+.kaya-panel-header button {
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+.kaya-message {
+    margin-top: 18px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.07);
+
+    color: rgba(255,244,215,0.9);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+    line-height: 1.35;
+}
+
+.kaya-options {
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 12px;
+}
+
+.kaya-options button {
+    flex: 1;
+
+    padding: 9px 8px;
+
+    border: 1px solid rgba(242,211,139,0.3);
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.06);
+
+    color: var(--cream);
+
+    font-size: 10px;
+}
+
+.kaya-options button:hover {
+    background: rgba(242,211,139,0.15);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .passport-section {
+        grid-template-columns:
+            1fr 1fr;
+
+        grid-template-areas:
+            "map intro"
+            "browser browser";
+    }
+
+    .map-area {
+        grid-area: map;
+    }
+
+    .passport-intro {
+        grid-area: intro;
+    }
+
+    .state-browser {
+        grid-area: browser;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .site-header {
+        padding: 18px 20px;
+    }
+
+    .logo-text strong {
+        font-size: 27px;
+    }
+
+    .navigation {
+        min-width: auto;
+
+        padding: 11px 12px;
+    }
+
+    .navigation a {
+        min-width: auto;
+
+        padding: 0 13px;
+
+        font-size: 15px;
+    }
+
+    .hero::before,
+    .hero::after {
+        width: 50%;
+    }
+
+    .hero-card {
+        width: 88vw;
+
+        padding: 35px 25px;
+    }
+
+    .hero-card h1 {
+        font-size: 62px;
+    }
+
+    .kaya-floating {
+        right: 15px;
+        bottom: 15px;
+
+        min-width: 190px;
+    }
+
+    .passport-section {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "map"
+            "intro"
+            "browser";
+
+        padding: 80px 20px;
+    }
+
+    .map-area {
+        min-height: 500px;
+    }
+
+    .passport-intro {
+        padding: 10px 5px;
+    }
+
+    .state-browser {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .all-states-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .site-header {
+        align-items: flex-start;
+    }
+
+    .navigation {
+        min-width: 0;
+    }
+
+    .navigation a {
+        padding: 0 7px;
+
+        font-size: 12px;
+    }
+
+    .logo-star {
+        font-size: 18px;
+    }
+
+    .logo-text strong {
+        font-size: 23px;
+    }
+
+    .logo-text small {
+        font-size: 7px;
+    }
+
+    .hero {
+        min-height: 820px;
+    }
+
+    .hero::before,
+    .hero::after {
+        width: 50%;
+    }
+
+    .hero-card {
+        margin-top: 40px;
+
+        padding: 30px 18px;
+    }
+
+    .hero-small-title {
+        font-size: 8px;
+    }
+
+    .hero-card h1 {
+        font-size: 51px;
+    }
+
+    .hero-tagline {
+        font-size: 10px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .search-box {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .search-box button {
+        min-height: 43px;
+    }
+
+    .state-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .state-card {
+        min-height: 88px;
+    }
+
+    .all-states-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-inner,
+    .all-states-inner {
+        padding: 35px 25px;
+    }
+
+    .modal-inner h2,
+    .all-states-inner h2 {
+        font-size: 45px;
+    }
+
+    .kaya-floating {
+        min-width: 170px;
+
+        padding: 9px 12px;
+    }
+
+    .kaya-star {
+        width: 33px;
+        height: 33px;
+    }
+
+    .kaya-text strong {
+        font-size: 18px;
+    }
+
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kritvaa — Handmade · Heartmade</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="site-header">
+
+    <a href="#home" class="logo">
+        <span class="logo-star">✦</span>
+
+        <span class="logo-text">
+            <strong>KRITVAA</strong>
+            <small>HANDMADE · HEARTMADE</small>
+        </span>
+    </a>
+
+    <nav class="navigation">
+        <a href="#home">Explore</a>
+        <a href="#passport">Search</a>
+        <a href="#footer">Login</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <!-- CENTER KRITVAA BOX -->
+
+    <div class="hero-card">
+
+        <div class="hero-small-title">
+            A DIGITAL HOME FOR INDIA'S LIVING HERITAGE
+        </div>
+
+        <div class="bharat">भारत</div>
+
+        <h1>KRITVAA</h1>
+
+        <div class="hero-tagline">
+            HANDMADE <span>•</span> HEARTMADE
+        </div>
+
+        <p class="hero-description">
+            Search, listen, look closer—and meet the traditions
+            that continue to shape everyday life across India.
+        </p>
+
+        <!-- SEARCH BOX -->
+
+        <form class="search-box" id="searchForm">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search states, crafts, traditions..."
+                autocomplete="off"
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+        <div class="hero-buttons">
+
+            <a href="#passport" class="hero-button main-button">
+                Explore India ✦
+            </a>
+
+            <a href="#passport" class="hero-button">
+                Discover Indian heritage →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= KAYA ================= -->
+
+    <button class="kaya-floating" id="kayaButton">
+
+        <span class="kaya-star">✦</span>
+
+        <span class="kaya-text">
+            <strong>KAYA</strong>
+            <small>Your Cultural AI Assistant</small>
+            <em><i></i> I'm here to help!</em>
+        </span>
+
+    </button>
+
+</section>
+
+
+<!-- ================= CULTURAL PASSPORT ================= -->
+
+<section class="passport-section" id="passport">
+
+    <div class="passport-glow glow-left"></div>
+    <div class="passport-glow glow-right"></div>
+
+
+    <!-- DECORATIVE TEXT -->
+
+    <div class="passport-decoration decoration-left">
+        CULTURE<br>
+        <strong>CONNECTS US</strong><br>
+        INDIA
+    </div>
+
+    <div class="passport-decoration decoration-bottom">
+        HANDMADE<br>
+        WITH LOVE ✦
+    </div>
+
+
+    <!-- ================= MAP ================= -->
+
+    <div class="map-area">
+
+        <div class="map-light"></div>
+
+        <div class="map-caption">
+            <span>✦</span>
+            <strong>INDIA</strong>
+            <small>ARTISAN HERITAGE</small>
+        </div>
+
+        <img
+            src="assets/india-map-cutout.png"
+            alt="India map filled with Indian artisan and craft imagery"
+            class="india-map"
+        >
+
+        <span class="map-star star-one">✦</span>
+        <span class="map-star star-two">✧</span>
+        <span class="map-star star-three">✦</span>
+
+    </div>
+
+
+    <!-- ================= PASSPORT INTRO ================= -->
+
+    <div class="passport-intro">
+
+        <span class="passport-label">
+            DISCOVER INDIA
+        </span>
+
+        <h2>
+            Cultural<br>
+            <span>Passport</span>
+        </h2>
+
+        <div class="passport-line">✦</div>
+
+        <p>
+            Explore the cultural soul of
+            <strong>28 incredible states</strong>,
+            one story at a time.
+        </p>
+
+        <div class="passport-stats">
+
+            <div>
+                <strong>28</strong>
+                <span>States</span>
+            </div>
+
+            <div>
+                <strong>∞</strong>
+                <span>Stories</span>
+            </div>
+
+            <div>
+                <strong>♥</strong>
+                <span>Heritage</span>
+            </div>
+
+        </div>
+
+        <button class="view-all-button" id="viewAllButton">
+            VIEW ALL 28 STATES
+            <span>→</span>
+        </button>
+
+    </div>
+
+
+    <!-- ================= STATE BOXES ================= -->
+
+    <div class="state-browser">
+
+        <div class="browser-heading">
+
+            <div>
+                <strong id="featuredNumber">08</strong>
+                <span>/ 28 featured states</span>
+            </div>
+
+            <span id="pageNumber">1 / 4</span>
+
+        </div>
+
+        <div class="browser-line"></div>
+
+        <div class="state-grid" id="stateGrid">
+            <!-- JavaScript creates the 8 boxes here -->
+        </div>
+
+        <button class="surprise-button" id="surpriseButton">
+            <span>✣</span>
+            <span>Surprise me</span>
+            <strong>→</strong>
+        </button>
+
+        <div class="browser-controls">
+
+            <button id="previousButton" aria-label="Previous states">
+                ↑
+            </button>
+
+            <div class="progress-bar">
+                <span id="progress"></span>
+            </div>
+
+            <button id="nextButton" aria-label="Next states">
+                ↓
+            </button>
+
+        </div>
+
+        <p class="browser-note">
+            Every discovery unlocks a story.
+            Your cultural passport grows with you.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer" id="footer">
+
+    <div class="footer-logo">
+        <strong>KRITVAA <span>✦</span></strong>
+        <small>HANDMADE · HEARTMADE</small>
+    </div>
+
+    <p>© 2025 Kritvaa. All rights reserved.</p>
+
+    <p>Empowering Artisans. Preserving Heritage.</p>
+
+    <div class="social-icons">
+        <a href="#">◎</a>
+        <a href="#">f</a>
+        <a href="#">▶</a>
+        <a href="#">✉</a>
+    </div>
+
+</footer>
+
+
+<!-- ================= STATE MODAL ================= -->
+
+<dialog id="stateModal" class="state-modal">
+
+    <button class="modal-close" id="closeStateModal">
+        ×
+    </button>
+
+    <div class="modal-inner">
+
+        <span class="modal-label">
+            KRITVAA · CULTURAL PASSPORT
+        </span>
+
+        <h2 id="modalStateName">
+            Rajasthan
+        </h2>
+
+        <div class="modal-star">✦</div>
+
+        <p id="modalStateText"></p>
+
+        <div id="modalTags" class="modal-tags"></div>
+
+    </div>
+
+</dialog>
+
+
+<!-- ================= ALL STATES MODAL ================= -->
+
+<dialog id="allStatesModal" class="all-states-modal">
+
+    <button class="modal-close" id="closeAllStatesModal">
+        ×
+    </button>
+
+    <div class="all-states-inner">
+
+        <span class="modal-label">
+            KRITVAA · CULTURAL PASSPORT
+        </span>
+
+        <h2>All 28 States</h2>
+
+        <div id="allStatesGrid" class="all-states-grid"></div>
+
+    </div>
+
+</dialog>
+
+
+<!-- ================= KAYA PANEL ================= -->
+
+<div class="kaya-panel" id="kayaPanel">
+
+    <div class="kaya-panel-header">
+
+        <div>
+            <strong>KAYA</strong>
+            <span>
+                <i></i>
+                Online
+            </span>
+        </div>
+
+        <button id="closeKaya">
+            ×
+        </button>
+
+    </div>
+
+    <div class="kaya-message" id="kayaMessage">
+
+        Namaste! ✨
+        I can help you explore India's crafts,
+        stories, traditions and the Cultural Passport.
+
+    </div>
+
+    <div class="kaya-options">
+
+        <button data-kaya="rajasthan">
+            Rajasthan
+        </button>
+
+        <button data-kaya="crafts">
+            Crafts
+        </button>
+
+        <button data-kaya="passport">
+            Passport
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
